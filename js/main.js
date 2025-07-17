@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
     const productList = document.getElementById('product-list');
     const searchInput = document.getElementById('searchInput');
     let allProducts = [];
+
+    // ShowLoader Function
+    function showLoader() {
+        if (loader) {
+            loader.style.display = 'block'
+        }
+    }
+    // HideLoader Function
 
     // Fetch products from JSON
     fetch('js/products.json')
