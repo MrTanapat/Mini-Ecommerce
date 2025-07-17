@@ -49,7 +49,7 @@ main {
 
 /* Loader Style*/
 .loader {
-    display: flex;
+    display: none;
     position: fixed;
     align-items: center;
     justify-content: center;
