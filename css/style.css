@@ -64,6 +64,7 @@ main {
     text-align: center;
     border: 2px solid #82e0aa ;
     white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /*Loader animation spinner*/
@@ -81,4 +82,41 @@ main {
 @keyframes spin {
     0% { transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
+}
+
+/* loader-message Style*/ 
+.loader-message {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 7%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.loader-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #28a745;
+}
+.loader-message.failed {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #dc3545;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    } to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }

@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
+  const loaderSuccess = document.getElementById("loaderSuccess");
+  const loaderFailed = document.getElementById("loaderFailed");
   const productList = document.getElementById("product-list");
   const searchInput = document.getElementById("searchInput");
   let allProducts = [];
@@ -14,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function hideLoader() {
     if (loader) {
       loader.style.display = "none";
+
+      if (isError) {
+      }
     }
   }
 
