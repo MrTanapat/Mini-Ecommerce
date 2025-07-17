@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     // HideLoader Function
+    function HideLoader() {
+        if(loader) {
+            loader.style.display = 'none';
+        }
+    }
 
     // Fetch products from JSON
     fetch('js/products.json')
