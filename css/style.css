@@ -41,8 +41,9 @@ main {
 
 .product-card img {
     max-width: 100%;
-    height: auto;
-    transform: scale(1.05);
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 .product-card h3 {
@@ -54,27 +55,29 @@ main {
 }
 
 #product-list {
-    display: flex; flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Loader Style*/
 .loader {
     display: none;
     position: fixed;
-    align-items: center;
-    justify-content: center;
     left: 50%;
     top: 7%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background-color: #eafaf1 ;
-    padding: 12px;
+    background-color: #eafaf1;
+    padding: 1rem 2rem;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
-    border: 2px solid #82e0aa ;
+    border: 2px solid #82e0aa;
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
 }
 
 /*Loader animation spinner*/
@@ -86,7 +89,7 @@ main {
     width: 1.2rem;
     height: 1.2rem;
     animation: spin 1s linear infinite;
-    margin: 10px;
+    margin-left: 10px;
 }
 
 @keyframes spin {
@@ -101,14 +104,13 @@ main {
     left: 50%;
     top: 7%;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 1001;
     padding: 1rem 2rem;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
     animation: fadeInScale 0.3s ease forwards, fadeOutScale 0.5s ease 1.5s forwards;
 }
 
