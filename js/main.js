@@ -16,9 +16,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function hideLoader() {
     if (loader) {
       loader.style.display = "none";
+    }
+  }
 
-      if (isError) {
-      }
+  //Show a success or failed message.
+  function showMessage(type) {
+    let messageElement;
+    if (type === "success") {
+      messageElement = loaderSuccess;
+    } else if (type === "failed") {
+      messageElement = loaderFailed;
+    }
+
+    if (messageElement) {
+      messageElement.style.display = "block";
+      setTimeout(() => {
+        messageElement.style.display = "none";
+      }, 3000);
     }
   }
 
@@ -29,13 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       allProducts = data;
       displayProducts(allProducts);
+      showMessage("success");
     })
 
     .catch((error) => {
       console.log("Error fetching products:", error);
       if (productList) {
-        productList.innerHTML =
-          "<p>Failed to load products. Please try again later.</p>";
+        showMessage("failed");
       }
     })
     .finally(() => {
@@ -50,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>ราคา: ${product.price} บาท</p>
+                <p>ราคา: ${Number(product.price).toLocaleString()} บาท</p>
             `;
       productList.appendChild(card);
     });
