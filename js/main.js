@@ -70,12 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+feature/search-and-validation
   // Inefficient Search
   searchInput.addEventListener("keyup", () => {
     const searchTerm = searchInput.value.toLowerCase();
     const filteredProducts = allProducts.filter((product) => {
       // Simple search, not very efficient
       return product.name.toLowerCase().includes(searchTerm);
+main
     });
     displayProducts(filteredProducts);
   });
